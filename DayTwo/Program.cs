@@ -1,5 +1,4 @@
 ﻿using Shared;
-using System.Linq;
 
 internal class Program
 {
@@ -26,11 +25,16 @@ internal class Program
             return el.Value;
         });
 
-        var strongestElf = sortedElves.ElementAt(0);
+        // very simple additions for Day 2 as the lifting was already done in Day 1
+        var elfAlpha = sortedElves.ElementAt(0);
+        var elfBeta = sortedElves.ElementAt(1);
+        var elfGamma = sortedElves.ElementAt(2);
+
+        var carriedTotal = elfAlpha.Value + elfBeta.Value + elfGamma.Value;
 
         var et = DateTime.Now - start;
 
-        Console.WriteLine($"The highest number of calories carried: {strongestElf.Value}, is by Elf: {strongestElf.Key}\r\n\r\nElapsed time: {et.TotalMilliseconds}ms");
+        Console.WriteLine($"The strongest 3 elves are carrying a total of {carriedTotal} calories\r\n\tAlpha is carrying:\t{elfAlpha.Value}\r\n\tBeta is carrying:\t{elfBeta.Value}\r\n\tGamma is carrying:\t{elfGamma.Value}\r\n\r\nElapsed time: {et.TotalMilliseconds}ms");
 
         Console.Read();
     }

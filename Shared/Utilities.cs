@@ -4,7 +4,7 @@
     {
         public static Dictionary<int, List<int>> GetDayOneInput(string path)
         {
-            Dictionary<int, List<int>> dayOneInput = new Dictionary<int, List<int>>();
+            var dayOneInput = new Dictionary<int, List<int>>();
 
             if (!string.IsNullOrEmpty(path))
             {
@@ -12,28 +12,28 @@
                 {
                     using var reader = new StreamReader(stream);
                     var line = string.Empty;
-                    var currentElf = 0;
+                    var currentEl = 0;
 
                     while ((line = reader.ReadLine()) != null)
                     {
-                        if (!int.TryParse(line, out var currentCal)) // next elf, init new List
+                        if (!int.TryParse(line, out var currentLineIntVal)) // next el, init new List
                         {
-                            currentElf++;
+                            currentEl++;
                         }
                         else
                         {
-                            if (dayOneInput.ContainsKey(currentElf))
+                            if (dayOneInput.ContainsKey(currentEl))
                             {
-                                dayOneInput[currentElf].Add(currentCal);
+                                dayOneInput[currentEl].Add(currentLineIntVal);
                             }
                             else
                             {
-                                var carriedCals = new List<int>
-                            {
-                                currentCal
-                            };
+                                var carried = new List<int>
+                                {
+                                    currentLineIntVal
+                                };
 
-                                dayOneInput.Add(currentElf, carriedCals);
+                                dayOneInput.Add(currentEl, carried);
                             }
                         }
                     }
