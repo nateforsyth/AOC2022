@@ -1,45 +1,15 @@
-﻿using System.Linq;
+﻿using Shared;
+using System.Linq;
 
 internal class Program
 {
     private static async Task Main(string[] args)
     {
-        Dictionary<int, List<int>> elves = new Dictionary<int, List<int>>();
+        // D:\Repos\AdventOfCode\2022\AOC2022\Shared\Input\DayOne.txt
+        string dayOnePath = "D:\\Repos\\AdventOfCode\\2022\\AOC2022\\Shared\\Input\\DayOne.txt";
+
         Dictionary<int, int> elvesTotals = new Dictionary<int, int>();
-
-        // D:\Repos\AdventOfCode\2022\AOC2022\DayOne\Input_DayOne.txt
-        using (var stream = File.Open("D:\\Repos\\AdventOfCode\\2022\\AOC2022\\DayOne\\Input_DayOne.txt", FileMode.Open))
-        {
-            using var reader = new StreamReader(stream);
-            var line = string.Empty;
-            var currentElf = 0;
-
-            while ((line = reader.ReadLine()) != null)
-            {
-                if (!int.TryParse(line, out var currentCal)) // next elf, init new List
-                {
-                    currentElf++;
-                }
-                else
-                {
-                    if (elves.ContainsKey(currentElf))
-                    {
-                        elves[currentElf].Add(currentCal);
-                    }
-                    else
-                    {
-                        var carriedCals = new List<int>
-                            {
-                                currentCal
-                            };
-
-                        elves.Add(currentElf, carriedCals);
-                    }
-                }
-            }
-        }
-
-        foreach (var elf in elves)
+        foreach (var elf in Utilities.GetDayOneInput(dayOnePath))
         {
             var runningTotal = 0;
 
@@ -58,7 +28,7 @@ internal class Program
 
         var strongestElf = sortedElves.ElementAt(0);
 
-        await Console.Out.WriteLineAsync($"The highest number of calories carried is by Elf: {strongestElf.Key}, carrying: {strongestElf.Value}");
+        await Console.Out.WriteLineAsync($"The highest number of calories carried: {strongestElf.Value}, is by Elf: {strongestElf.Key}");
 
         Console.Read();
     }
