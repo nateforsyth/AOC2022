@@ -10,7 +10,7 @@ using std::cin;
 
 int main()
 {
-    std::string FILENAME = "D:\\Repos\\AdventOfCode\\2022\\AOC2022\\Shared\\Input\\DayOne.txt";
+    std::string FILENAME = "D:\\Repos\\AdventOfCode\\2022\\AOC2022\\CS\\Shared\\Input\\DayOne.txt";
 
     std::ifstream infile(FILENAME);
 
