@@ -13,7 +13,7 @@ var importedStrings = [String]()
 var input: [Int: [Int]] = [:]
 var elvesTotals: [Int: Int] = [:]
 
-let p = "/Users/nathanforsyth/Documents/Repos/AdventOfCode/2022/AOC2022/Input/Input_DayOne.txt"
+let p = "/Users/nathanforsyth/Documents/Repos/AdventOfCode/2022/AOC2022/CS/Shared/Input/DayOne.txt"
 let path = NSURL(fileURLWithPath: p)
 if let lines = try? String(contentsOf: path as URL) {
     importedStrings = lines.components(separatedBy: "\n")
