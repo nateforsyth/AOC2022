@@ -2,14 +2,22 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <fstream>
+#include <chrono>
+#include <iomanip>
+#include <ctime>
 
 using std::cout;
 using std::cin;
+using namespace std::chrono;
+using std::time_t;
 
 int main()
 {
+    auto start = system_clock::now();
+
     std::string FILENAME = "D:\\Repos\\AdventOfCode\\2022\\AOC2022\\CS\\Shared\\Input\\DayOne.txt";
 
     std::ifstream infile(FILENAME);
@@ -25,25 +33,31 @@ int main()
         infile.close();
     }
 
-    
+    auto end = system_clock::now();
 
-    //cout << "What is your name?\n";
+    duration<double> etSec = end - start;
 
-    //std::string str;
-    //std::getline(cin, str); // equivalent to C# Console.WriteLine("string")
+    char timeBuf[21];
 
-    //cout << "\nHello " + str + "!\n\nPress any key to exit...\n";
+    std::ostringstream startOss;
+    time_t startTime = system_clock::to_time_t(start);
+    auto startT = time(&startTime);
+    auto startMs = duration_cast<milliseconds>(start.time_since_epoch()) % 1000;
+    std::tm brokenStart = *std::localtime(&startTime);
+    startOss << std::put_time(&brokenStart, "%d/%m/%y %H:%M:%S");
+    auto startStr = startOss.str();
+
+    std::ostringstream endOss;
+    time_t endTime = system_clock::to_time_t(end);
+    auto endT = time(&endTime);
+    auto endMs = duration_cast<milliseconds>(end.time_since_epoch()) % 1000;
+    std::tm brokenEnd = *std::localtime(&endTime);
+    endOss << std::put_time(&brokenEnd, "%d/%m/%y %H:%M:%S");
+    auto endStr = endOss.str();
+
+    cout << "Started at: " << startStr + "." << std::to_string(startMs.count()) << std::endl;
+    cout << "Completed at: " << endStr << "." << std::to_string(endMs.count()) << std::endl;
+    cout << "Elapsed time: " << etSec.count() << "s" << std::endl;
 
     cin.get();
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
