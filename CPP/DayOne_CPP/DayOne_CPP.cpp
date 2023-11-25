@@ -9,6 +9,8 @@
 #include <iomanip>
 #include <ctime>
 
+#include "UtilityLibrary.h"
+
 using std::cout;
 using std::cin;
 using namespace std::chrono;
@@ -18,42 +20,39 @@ int main()
 {
     auto start = system_clock::now();
 
-    std::string FILENAME = "D:\\Repos\\AdventOfCode\\2022\\AOC2022\\CS\\Shared\\Input\\DayOne.txt";
+    std::string FILENAME = "..\\..\\CS\\Shared\\Input\\DayOne.txt";
 
     std::ifstream infile(FILENAME);
 
-    if (infile.is_open())
+    if (infile.is_open() && infile.good())
     {
         std::string line;
+        std::stringstream strStream;
+
         while (std::getline(infile, line))
         {
+            strStream << line << std::endl;
+
             cout << line + "\n";
         }
 
         infile.close();
+    }
+    else {
+        cout << "Could not open file: " + FILENAME + "\n\n";
     }
 
     auto end = system_clock::now();
 
     duration<double> etSec = end - start;
 
-    char timeBuf[21];
+    //char timeBuf[21];
 
-    std::ostringstream startOss;
-    time_t startTime = system_clock::to_time_t(start);
-    auto startT = time(&startTime);
-    auto startMs = duration_cast<milliseconds>(start.time_since_epoch()) % 1000;
-    std::tm brokenStart = *std::localtime(&startTime);
-    startOss << std::put_time(&brokenStart, "%d/%m/%y %H:%M:%S");
-    auto startStr = startOss.str();
+    std::string startStr = ConvertTimePointToNzString(start);
+    std::chrono::milliseconds startMs = ConvertTimePointToMs(start);
 
-    std::ostringstream endOss;
-    time_t endTime = system_clock::to_time_t(end);
-    auto endT = time(&endTime);
-    auto endMs = duration_cast<milliseconds>(end.time_since_epoch()) % 1000;
-    std::tm brokenEnd = *std::localtime(&endTime);
-    endOss << std::put_time(&brokenEnd, "%d/%m/%y %H:%M:%S");
-    auto endStr = endOss.str();
+    std::string endStr = ConvertTimePointToNzString(end);
+    std::chrono::milliseconds endMs = ConvertTimePointToMs(end);
 
     cout << "Started at: " << startStr + "." << std::to_string(startMs.count()) << std::endl;
     cout << "Completed at: " << endStr << "." << std::to_string(endMs.count()) << std::endl;
