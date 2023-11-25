@@ -12,12 +12,10 @@
 #include <algorithm>
 
 #include "UtilityLibrary.h"
-#include "DayOne_CPP.h"
 
 using std::cout;
 using std::cin;
 using namespace std::chrono;
-using std::time_t;
 
 template<typename TKey, typename TValue>
 std::pair<TKey, TValue> get_element_with_max_int_value(const std::map<TKey, TValue>& x);
