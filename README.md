@@ -19,7 +19,7 @@ I wasn't aware how much plumbing was required to simply create a DLL for utility
 
 ## New language; Swift
 
-- [AOC2022_Swift](https://github.com/nateforsyth/AOC2022/tree/master/Swift/AOC2022_Swift
+- [AOC2022_Swift](https://github.com/nateforsyth/AOC2022/tree/master/Swift/AOC2022_Swift)
 
 
 ## New language; C++
