@@ -7,9 +7,9 @@ Initial plans were to do AOC2022 in a language I know well, and then do it in tw
 I've since abandoned this because I ran out of time prior to AOC2023 starting and I am trying to prioritise C++. Upon completion of AOC2023, I may return and redo all challenges in C# and Swift.
 
 
-## Known language; C#
+## C++
 
-I wasn't aware how much plumbing was required to simply create a DLL for utility functionality, and I've thoroughly enjoyed learning how it all works which is why AOC2023 will be focused upon C++.
+I wasn't aware how much plumbing was required to simply create a DLL for utility functionality, and I've thoroughly enjoyed learning how it all works which is partially why my AOC2023 attempt will be focused upon C++.
 
 - [C++ > Day One (WIP)](https://github.com/nateforsyth/AOC2022/tree/master/CPP/DayOne_CPP)
 - [C++ > AOCUtilities](https://github.com/nateforsyth/AOC2022/tree/master/CPP/AOCUtilities)
@@ -17,16 +17,21 @@ I wasn't aware how much plumbing was required to simply create a DLL for utility
 [Microsoft Docs > Walkthrough: Create and use your own Dynamic Link Library (C++)](https://learn.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-170)
 
 
-## New language; Swift
+## C#
 
-- [AOC2022_Swift](https://github.com/nateforsyth/AOC2022/tree/master/Swift/AOC2022_Swift)
-
-
-## New language; C++
+C# is my primary language in my day job. I'd intended to do the time-based challenge aspect of AOC using this language, and then use other languages to do the same thing to learn them. This has ended up not happening due to time consuming projects at work.
 
 - [C# > Day One, 1](https://github.com/nateforsyth/AOC2022/tree/master/CS/DayOne/DayOne_1)
 - [C# > Day One, 2](https://github.com/nateforsyth/AOC2022/tree/master/CS/DayOne/DayOne_2)
 - [C# > Shared functionality]()
+
+
+## Swift
+
+I'm putting learning of Swift on hold for a while.
+
+- [AOC2022_Swift](https://github.com/nateforsyth/AOC2022/tree/master/Swift/AOC2022_Swift)
+
 
 ## AOC2023
 
