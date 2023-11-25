@@ -34,7 +34,6 @@ int main()
     if (infile.is_open() && infile.good())
     {
         std::string line;
-        std::stringstream strStream;
 
         int currentElf = 0;
         int currentElfCarrying = 0;
@@ -58,9 +57,6 @@ int main()
                 {
                     currentElfCarrying += i;
                 }
-
-                strStream << i << std::endl;
-                cout << line + "\n";
 
                 delete[] lineArray;
             }
