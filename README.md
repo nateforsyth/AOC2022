@@ -11,10 +11,27 @@ I've since abandoned this because I ran out of time prior to AOC2023 starting an
 
 I wasn't aware how much plumbing was required to simply create a DLL for utility functionality, and I've thoroughly enjoyed learning how it all works which is partially why my AOC2023 attempt will be focused upon C++.
 
-- [C++ > Day One (WIP)](https://github.com/nateforsyth/AOC2022/tree/master/CPP/DayOne_CPP)
+- [C++ > Day One](https://github.com/nateforsyth/AOC2022/tree/master/CPP/DayOne_CPP)
+- [C++ > Day Two](https://github.com/nateforsyth/AOC2022/tree/master/CPP/DayTwo_CPP)
 - [C++ > AOCUtilities](https://github.com/nateforsyth/AOC2022/tree/master/CPP/AOCUtilities)
 
 [Microsoft Docs > Walkthrough: Create and use your own Dynamic Link Library (C++)](https://learn.microsoft.com/en-us/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp?view=msvc-170)
+
+
+### DLL
+
+Properties > [TODO]
+
+
+### Consuming project
+
+- Properties > Configuration Properties > C/C++ > **General**
+ - Additional Include Directories = [pathToDLLProjectFolder]
+- Properties > Configuration Properties > Linker > **General**
+ - Additional Library Directories = [pathToDLLBinFolder]
+ - Link Library Directories = **No**
+- Properties > Configuration Properties > Linker > **Input**
+ - Additional Dependencies = [DLLName].lib
 
 
 ## C#
@@ -23,7 +40,7 @@ C# is my primary language in my day job. I'd intended to do the time-based chall
 
 - [C# > Day One, 1](https://github.com/nateforsyth/AOC2022/tree/master/CS/DayOne/DayOne_1)
 - [C# > Day One, 2](https://github.com/nateforsyth/AOC2022/tree/master/CS/DayOne/DayOne_2)
-- [C# > Shared functionality]()
+- [C# > Shared functionality](https://github.com/nateforsyth/AOC2022/tree/master/CS/Shared)
 
 
 ## Swift
@@ -33,6 +50,6 @@ I'm putting learning of Swift on hold for a while.
 - [AOC2022_Swift](https://github.com/nateforsyth/AOC2022/tree/master/Swift/AOC2022_Swift)
 
 
-## AOC2023
+# AOC2023
 
 My [Advent of Code 2023](https://github.com/nateforsyth/AOC2023) repository.
