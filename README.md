@@ -26,12 +26,12 @@ Properties > [TODO]
 ### Consuming project
 
 - Properties > Configuration Properties > C/C++ > **General**
- - Additional Include Directories = [pathToDLLProjectFolder]
+  - Additional Include Directories = [pathToDLLProjectFolder]
 - Properties > Configuration Properties > Linker > **General**
- - Additional Library Directories = [pathToDLLBinFolder]
- - Link Library Directories = **No**
+  - Additional Library Directories = [pathToDLLBinFolder]
+  - Link Library Directories = **No**
 - Properties > Configuration Properties > Linker > **Input**
- - Additional Dependencies = [DLLName].lib
+  - Additional Dependencies = [DLLName].lib
 
 
 ## C#
